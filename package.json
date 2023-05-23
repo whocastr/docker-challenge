@@ -1,0 +1,21 @@
+{
+  "name": "node-mysql-docker-api",
+  "version": "1.0.0",
+  "description": "Node.js API connecting to MySQL in Docker",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node app/server.js"
+  },
+  "keywords": [
+    "node",
+    "mysql",
+    "docker",
+    "api"
+  ],
+  "author": "Luik Castro",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
