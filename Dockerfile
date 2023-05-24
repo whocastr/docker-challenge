@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:latest
 
 WORKDIR /app
 
@@ -8,4 +8,4 @@ RUN npm install
 COPY app ./app
 COPY db ./db
 
-CMD ["node", "app/server.js"]
+CMD ["node", "app/app.js"]
