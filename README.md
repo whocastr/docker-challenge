@@ -1,7 +1,5 @@
 # docker-challenge
-
-![image](https://github.com/whocastr/docker-challenge/assets/63364180/2626654f-42d1-489a-a11d-937628dc53f4)
-
+![image](https://github.com/whocastr/docker-challenge/assets/63364180/9951af3c-1dd1-448f-81d6-167aef87b735)
 # Clonar repositório
     - git clone
 # Abrir um terminal cmd/powershell no local onde foi clonado e rodar o seguinte comando:
