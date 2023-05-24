@@ -1,19 +1,38 @@
 version: "3"
+
+networks:
+  my-network:
+    driver: bridge
+
 services:
   mysql:
     image: mysql
+    container_name: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=mydb
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=app
     ports:
       - "3306:3306"
     volumes:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      timeout: 20s
+      retries: 10
+    networks:
+      - my-network
+
   node:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: node
     ports:
       - "3000:3000"
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
+    networks:
+      - my-network
